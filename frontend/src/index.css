@@ -1,0 +1,30 @@
+:root {
+  --ink: #2C2C2C;
+  --charcoal: #4A4A4A;
+  --terracotta: #C85A3C;
+  --paper: #F5F3EE;
+  --stone: #E8E4DC;
+  --stone-dark: #D4CFC4;
+  --text-primary: #2C2C2C;
+  --text-secondary: #6A6A6A;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Work Sans', sans-serif;
+  background: var(--paper);
+  color: var(--text-primary);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}

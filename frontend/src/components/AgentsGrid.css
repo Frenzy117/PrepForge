@@ -1,0 +1,5 @@
+.agents-grid {
+  display: grid;
+  gap: 2rem;
+  margin-bottom: 4rem;
+}

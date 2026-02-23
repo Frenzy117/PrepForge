@@ -1,0 +1,114 @@
+.results {
+  animation: fadeIn 0.6s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.divider {
+  height: 1px;
+  background: var(--stone);
+  margin: 4rem 0;
+}
+
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.metric {
+  text-align: center;
+  padding: 2rem 1rem;
+  background: white;
+  border: 1px solid var(--stone);
+  transition: all 0.4s ease;
+}
+
+.metric:hover {
+  border-color: var(--terracotta);
+  transform: translateY(-2px);
+}
+
+.metric-value {
+  font-family: 'Crimson Pro', serif;
+  font-size: 3rem;
+  font-weight: 300;
+  background: linear-gradient(135deg, var(--ink) 0%, var(--terracotta) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 0.5rem;
+}
+
+.metric-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-secondary);
+  font-weight: 400;
+}
+
+.analysis {
+  background: white;
+  border: 1px solid var(--stone);
+  padding: 2.5rem;
+}
+
+.analysis-section {
+  margin-bottom: 2.5rem;
+}
+
+.analysis-section:last-child {
+  margin-bottom: 0;
+}
+
+.analysis-section h4 {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1.25rem;
+  font-weight: 400;
+  margin-bottom: 1rem;
+  color: var(--terracotta);
+}
+
+.analysis-section ul {
+  list-style: none;
+}
+
+.analysis-section li {
+  padding-left: 1.5rem;
+  margin-bottom: 0.875rem;
+  position: relative;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  font-weight: 300;
+  line-height: 1.7;
+}
+
+.analysis-section li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: var(--terracotta);
+}
+
+@media (max-width: 1024px) {
+  .metrics {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .analysis {
+    padding: 1.5rem;
+  }
+}

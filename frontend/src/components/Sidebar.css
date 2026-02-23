@@ -1,0 +1,259 @@
+.sidebar {
+  position: sticky;
+  top: 2rem;
+  height: fit-content;
+}
+
+.input-section {
+  margin-bottom: 3rem;
+}
+
+.input-section:last-child {
+  margin-bottom: 0;
+}
+
+.label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--charcoal);
+  margin-bottom: 1rem;
+  display: block;
+  font-weight: 500;
+}
+
+/* Upload Zone */
+.upload-area {
+  border: 1.5px dashed var(--stone);
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  background: white;
+}
+
+.upload-area:hover {
+  border-color: var(--terracotta);
+  background: var(--paper);
+}
+
+.upload-icon {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  opacity: 0.4;
+}
+
+.upload-area p {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  font-weight: 300;
+}
+
+.upload-area strong {
+  color: var(--text-primary);
+  font-weight: 400;
+}
+
+.file-status {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 1.25rem;
+  background: white;
+  border: 1px solid var(--stone);
+  margin-top: 1rem;
+}
+
+.file-icon {
+  font-size: 1.25rem;
+}
+
+.file-name {
+  flex: 1;
+  font-size: 0.9rem;
+  color: var(--text-primary);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* URL Input Wrapper */
+.url-input-wrapper {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.url-input-wrapper input[type="text"] {
+  flex: 1;
+}
+
+.add-url-button {
+  width: auto;
+  padding: 1rem 1.5rem;
+  background: var(--stone);
+  border: none;
+  color: var(--text-primary);
+  font-family: 'Work Sans', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 400;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: none;
+}
+
+.add-url-button:hover {
+  background: var(--terracotta);
+  color: white;
+  transform: none;
+}
+
+/* Job URLs List */
+.job-urls-list {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.job-url-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.875rem 1rem;
+  background: white;
+  border: 1px solid var(--stone);
+  transition: all 0.3s ease;
+}
+
+.job-url-item:hover {
+  border-color: var(--terracotta);
+}
+
+.url-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  background: var(--paper);
+  color: var(--text-primary);
+  font-size: 0.75rem;
+  font-weight: 500;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.url-text {
+  flex: 1;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.remove-url-button {
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  background: transparent;
+  border: none;
+  color: var(--text-secondary);
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.remove-url-button:hover {
+  color: var(--terracotta);
+  background: transparent;
+  transform: none;
+}
+
+.url-count {
+  margin-top: 0.75rem;
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  text-align: right;
+  font-weight: 300;
+}
+
+/* Input Field */
+input[type="text"] {
+  width: 100%;
+  padding: 1rem 1.25rem;
+  background: white;
+  border: 1.5px solid var(--stone);
+  color: var(--text-primary);
+  font-family: 'Work Sans', sans-serif;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  font-weight: 300;
+}
+
+input[type="text"]:focus {
+  outline: none;
+  border-color: var(--terracotta);
+  background: var(--paper);
+}
+
+input[type="text"]::placeholder {
+  color: var(--text-secondary);
+  font-weight: 300;
+}
+
+/* Button */
+.analyze-button {
+  width: 100%;
+  padding: 1.125rem;
+  background: var(--ink);
+  border: none;
+  color: var(--paper);
+  font-family: 'Work Sans', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  text-transform: uppercase;
+  position: relative;
+  overflow: hidden;
+}
+
+.analyze-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, var(--terracotta), transparent);
+  transition: left 0.6s ease;
+}
+
+.analyze-button:hover::before {
+  left: 100%;
+}
+
+.analyze-button:hover {
+  background: var(--terracotta);
+  transform: translateY(-1px);
+}
+
+.analyze-button:active {
+  transform: translateY(0);
+}
+
+.analyze-button span {
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 1024px) {
+  .sidebar {
+    position: relative;
+    top: 0;
+  }
+}
