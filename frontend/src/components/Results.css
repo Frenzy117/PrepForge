@@ -101,8 +101,100 @@
   color: var(--terracotta);
 }
 
+.job-matches {
+  margin-bottom: 3rem;
+}
+
+.job-matches-title {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin-bottom: 1.5rem;
+}
+
+.job-match-card {
+  background: white;
+  border: 1px solid var(--stone);
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.job-match-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 0.5rem;
+}
+
+.job-match-header h4 {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1.25rem;
+  font-weight: 400;
+  margin: 0;
+}
+
+.job-match-score {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1.75rem;
+  color: var(--terracotta);
+}
+
+.job-match-company {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+}
+
+.job-match-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.job-match-columns h5 {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--terracotta);
+  margin-bottom: 0.5rem;
+}
+
+.job-match-columns ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.job-match-columns li {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+  padding-left: 1rem;
+  position: relative;
+}
+
+.job-match-columns li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: var(--terracotta);
+}
+
+.job-match-recommendation {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  border-top: 1px solid var(--stone);
+  padding-top: 1rem;
+  margin: 0;
+}
+
 @media (max-width: 1024px) {
   .metrics {
+    grid-template-columns: 1fr;
+  }
+
+  .job-match-columns {
     grid-template-columns: 1fr;
   }
 }

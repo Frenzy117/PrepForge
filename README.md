@@ -171,7 +171,11 @@ View traces in your LangSmith project dashboard to debug, profile, and iterate o
 
 - [x] Backend API (FastAPI)
 - [x] Web frontend
+- [x] Phase A: session-scoped state, `/api/analyze`, URL + paste jobs, real Results UI
 - [ ] Support for additional job boards
+- [ ] Auth, persistence, export PDF
 - [ ] Resume enhancement suggestions
+
+See [IMPLEMENTATION_GUIDE.md](IMPLEMENTATION_GUIDE.md) for Phase A API details and run instructions.
 
 ---

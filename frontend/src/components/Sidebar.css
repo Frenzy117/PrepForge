@@ -251,6 +251,80 @@ input[type="text"]::placeholder {
   z-index: 1;
 }
 
+.file-error {
+  color: #c0392b;
+  margin-top: 8px;
+  padding: 8px;
+  background-color: #fadbd8;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+
+.job-mode-toggle {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.job-mode-toggle button {
+  flex: 1;
+  padding: 0.65rem;
+  background: white;
+  border: 1px solid var(--stone);
+  font-family: 'Work Sans', sans-serif;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.job-mode-toggle button.mode-active {
+  background: var(--ink);
+  color: var(--paper);
+  border-color: var(--ink);
+}
+
+.paste-input-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.url-hint {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  margin: 0 0 0.75rem;
+  line-height: 1.4;
+  font-weight: 300;
+}
+
+.paste-title-input {
+  width: 100%;
+}
+
+.paste-textarea {
+  width: 100%;
+  padding: 1rem 1.25rem;
+  background: white;
+  border: 1.5px solid var(--stone);
+  font-family: 'Work Sans', sans-serif;
+  font-size: 0.9rem;
+  resize: vertical;
+  min-height: 120px;
+}
+
+.paste-textarea:focus {
+  outline: none;
+  border-color: var(--terracotta);
+}
+
+.analyze-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
 @media (max-width: 1024px) {
   .sidebar {
     position: relative;
