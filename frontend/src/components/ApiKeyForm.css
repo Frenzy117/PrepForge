@@ -1,0 +1,35 @@
+.apikey-form {
+  margin-bottom: 12px;
+}
+.apikey-form .label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+.apikey-form-row {
+  display: flex;
+  gap: 8px;
+}
+.apikey-input {
+  flex: 1;
+  padding: 6px 8px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+}
+.apikey-button {
+  padding: 6px 10px;
+  background: #1f6feb;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.apikey-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+.apikey-status {
+  margin-top: 6px;
+  font-size: 13px;
+  color: #444;
+}

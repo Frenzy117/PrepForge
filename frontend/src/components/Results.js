@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactMarkdown from 'react-markdown';
 import './Results.css';
 
 function Results({ data }) {
@@ -41,25 +42,46 @@ function Results({ data }) {
               <div className="job-match-columns">
                 <div>
                   <h5>Strengths</h5>
-                  <ul>
-                    {(job.strengths || []).map((item, i) => (
-                      <li key={i}>{item}</li>
-                    ))}
-                  </ul>
+                  <div className="markdown-block">
+                    {(() => {
+                      const md = (job.strengths || []).map((it) => {
+                        if (/\n/.test(it) && /\d+\.\s+/.test(it)) {
+                          const parts = it.split('\n');
+                          const first = parts.shift();
+                          const rest = parts.map((l) => '  ' + l).join('\n');
+                          return `- ${first}\n${rest}`;
+                        }
+                        return `- ${it}`;
+                      }).join('\n');
+                      return <ReactMarkdown>{md}</ReactMarkdown>;
+                    })()}
+                  </div>
                 </div>
                 <div>
                   <h5>Gaps</h5>
-                  <ul>
-                    {(job.gaps || []).map((item, i) => (
-                      <li key={i}>{item}</li>
-                    ))}
-                  </ul>
+                  <div className="markdown-block">
+                    {(() => {
+                      const md = (job.gaps || []).map((it) => {
+                        if (/\n/.test(it) && /\d+\.\s+/.test(it)) {
+                          const parts = it.split('\n');
+                          const first = parts.shift();
+                          const rest = parts.map((l) => '  ' + l).join('\n');
+                          return `- ${first}\n${rest}`;
+                        }
+                        return `- ${it}`;
+                      }).join('\n');
+                      return <ReactMarkdown>{md}</ReactMarkdown>;
+                    })()}
+                  </div>
                 </div>
               </div>
               {job.recommendation && (
-                <p className="job-match-recommendation">
-                  <strong>Recommendation:</strong> {job.recommendation}
-                </p>
+                <div className="job-match-recommendation">
+                  <strong>Recommendation:</strong>
+                  <div className="job-match-recommendation-text">
+                    <ReactMarkdown>{job.recommendation}</ReactMarkdown>
+                  </div>
+                </div>
               )}
             </div>
           ))}
@@ -71,7 +93,7 @@ function Results({ data }) {
           <h4>Strengths</h4>
           <ul>
             {(data.strengths || []).map((item, index) => (
-              <li key={index}>{item}</li>
+              <li key={index}><ReactMarkdown>{item}</ReactMarkdown></li>
             ))}
           </ul>
         </div>
@@ -80,7 +102,7 @@ function Results({ data }) {
           <h4>Recommendations</h4>
           <ul>
             {(data.recommendations || []).map((item, index) => (
-              <li key={index}>{item}</li>
+              <li key={index}><ReactMarkdown>{item}</ReactMarkdown></li>
             ))}
           </ul>
         </div>
@@ -89,7 +111,7 @@ function Results({ data }) {
           <h4>Areas for Development</h4>
           <ul>
             {(data.development || []).map((item, index) => (
-              <li key={index}>{item}</li>
+              <li key={index}><ReactMarkdown>{item}</ReactMarkdown></li>
             ))}
           </ul>
         </div>

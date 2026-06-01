@@ -1,5 +1,6 @@
 import React, { useRef, useState } from 'react';
 import './Sidebar.css';
+import ApiKeyModal from './ApiKeyModal';
 
 function Sidebar({
   resumeFile,
@@ -15,6 +16,7 @@ function Sidebar({
 }) {
   const fileInputRef = useRef(null);
   const [inputMode, setInputMode] = useState('url');
+  const [showApiKeyModal, setShowApiKeyModal] = useState(false);
   const [currentUrl, setCurrentUrl] = useState('');
   const [pasteTitle, setPasteTitle] = useState('');
   const [pasteText, setPasteText] = useState('');
@@ -65,6 +67,16 @@ function Sidebar({
 
   return (
     <aside className="sidebar">
+      <div style={{ marginBottom: 12 }}>
+        <button
+          type="button"
+          className="analyze-button"
+          onClick={() => setShowApiKeyModal(true)}
+        >
+          Set API Key
+        </button>
+        {showApiKeyModal && <ApiKeyModal onClose={() => setShowApiKeyModal(false)} />}
+      </div>
       <div className="input-section">
         <label className="label">Resume</label>
         <div
