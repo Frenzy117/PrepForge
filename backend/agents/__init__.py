@@ -1,4 +1,3 @@
-"""Backward-compatible re-export. Prefer backend.agents.builder."""
 from backend.agents.builder import create_builder
 
 __all__ = ["create_builder"]
